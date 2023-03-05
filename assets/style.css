@@ -1,4 +1,11 @@
 /* basic css stuffs */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 header {
     display: flex;
     justify-content: center;
@@ -32,3 +39,35 @@ button {
 .box-one {
     border: 1.5px solid black;
 }
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #3f51b5;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  main {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+  }
+  button:hover {
+    background-color: #3e8e41;
+  }
+
+  @media screen and (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+  
+    .column {
+      width: 100%;
+    }
+  }
