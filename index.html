@@ -14,21 +14,28 @@
             <div>
                 <p class="title">Search City:</p>
                 <input id="city-search" type="text" placeholder="Chicago"/>
-                <button type="submit">Search</button>
-            </div>
-            <div><p class="title">Recent Searches:</p></div>
-    </section>
-    <section class="column-two">
-            <div class="box-one">
-                <p class="title">Today</p>
-                <div>parse json info</div>
+                <button id="submitbtn">Search</button>
             </div>
             <div>
-                <p class="title">5-day</p>
-                <div>parse json info</div>
+                <p class="title">Recent Searches:</p>
+            </div>
+        </section>
+    <section class="column-two">
+            <div class="box-one">
+                <p id="current-city" class="title">Today</p>
+                <div id="one-day"></div>
+            </div>
+            <div>
+                <p id="forecast" class="title">This Weeks Forecast:</p>
+                <div id="five-day"></div>
+                <div></div>
             </div>
     </section>
+
+
     </main>
     <script src="./assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    
 </body>
 </html>
