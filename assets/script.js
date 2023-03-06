@@ -3,6 +3,9 @@ const citySearch = document.querySelector("#city-search");
 const currentCity = document.querySelector("#current-city");
 
 console.log(citySearch.value);
+
+const cityName = citySearch.value;
+
 let forecast;
 
 document.querySelector('#submitbtn').addEventListener('click', convertCity);
@@ -71,26 +74,7 @@ function convertCity(event) {
                 const humiditySix = data2.list[38].main.humidity
                 const windSpeedSix = data2.list[38].wind.speed
                 
-                console.log(dateTwo,
-                    tempTwo,
-                    humidityTwo,
-                    windSpeedTwo,
-                    dateThree,
-                    tempThree,
-                    humidityThree,
-                    windSpeedThree,
-                    dateFour,
-                    tempFour,
-                    humidityFour,
-                    windSpeedFour,
-                    dateFive,
-                    tempFive,
-                    humidityFive,
-                    windSpeedFive,
-                    dateSix,
-                    tempSix,
-                    humiditySix,
-                    windSpeedSix,);
+                // console.log(dateTwo, tempTwo, humidityTwo, windSpeedTwo, dateThree, tempThree, humidityThree, windSpeedThree, dateFour, tempFour, humidityFour, windSpeedFour, dateFive, tempFive, humidityFive, windSpeedFive, dateSix, tempSix, humiditySix, windSpeedSix,);
 
                 const weekWeather1 = 
                 `<h3>(${dateTwo})</h3>
@@ -136,22 +120,26 @@ function convertCity(event) {
                     weekWeather4,
                     weekWeather5,)
 
-                //city name, date, icon of weather, temperature, humidity, and windspeed
+                    function saveCity() {
+                        
+                    const searchedCity = citySearch.value
+                    console.log(searchedCity);
+                    // searchedCity.push(city)
+                    
+                    // searchedCity.splice(5)
+                    
+                    localStorage.setItem('searchedCity', JSON.stringify(searchedCity))
+                    const storedCities = JSON.parse(localStorage.getItem('searchedCity'));
+                    const displaySearchHistory = `<li>${storedCities}</li>`
+                    $('#search-history').append(displaySearchHistory)
 
-
-
-            //    const oneDay = (data2, citySearch) => {
-            //     const current = data2.list[0];
-            //     const getEmoji = current.weather[0].icon;
-            //     const icon = `https://openweathermap.org/img/wn/${getIcon}.png`;
-            //     const temp = current.main
-
-            //     const oneDayHtml =
-            //         `<h3></h3>`
-            //    }
-                })
-
+                    
+                    
+                }
+                saveCity();
+            })
+            
             });
     };
-    
+
 
